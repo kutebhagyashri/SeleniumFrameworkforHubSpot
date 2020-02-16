@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  
-	<listeners>
-          <listener class-name="com.qa.hubspot.listeners.TestAllureListener" />
-        <!--   <listener class-name="com.qa.hubspot.listeners.TesultsListener" /> -->
- 	</listeners>
-          
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-  <test name="Test">
-  <parameter name="browser" value="firefox" />
-        <classes>
-        <class name="com.qa.hubspot.tests.LoginPageTest"/>
-    </classes>
-    
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="Hub Spot Regression Suite">
+
+	<listeners>
+
+		<listener class-name="com.qa.hubspot.listeners.TesultsListener" />
+		<!-- <listener class-name="com.qa.hubspot.listeners.ExtentReportListener"/>
+		<listener class-name="com.qa.hubspot.listeners.TestAllureListener" />
+		<listener class-name="com.qa.hubspot.listeners.ScreenshotListener" /> -->
+
+
+
+	</listeners>
+
+	<test name="Hub Spot Functional Regression Test">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.qa.hubspot.tests.LoginPageTest" />
+		</classes>
+	</test>
+</suite>
