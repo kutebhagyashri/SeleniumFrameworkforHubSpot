@@ -23,14 +23,14 @@ public class LoginPageTest {
 	LoginPage loginpage;
 	Credentials usercred;
 	
-	@BeforeTest
+	@BeforeTest(alwaysRun=true)
 	@Parameters(value= {"browser"})
 	public void setUp(String browser) {
 		String browserName = null;
 		basepage = new BasePage();
 		prop = basepage.init_properties();
 		
-		if(browser.equals(null)) {
+		if(browser.equals(null) || browser.equals("") || browser.isEmpty()) {
 			browserName = prop.getProperty("browser");
 		}else {
 			browserName = browser;

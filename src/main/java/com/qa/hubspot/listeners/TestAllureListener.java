@@ -1,5 +1,3 @@
-
-  
 package com.qa.hubspot.listeners;
 
 
@@ -62,13 +60,12 @@ public class TestAllureListener extends BasePage implements ITestListener {
 	public void onTestFailure(ITestResult iTestResult) {
 		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 		Object testClass = iTestResult.getInstance();
-		//WebDriver driver = BasePage.getDriver();
+		WebDriver driver = BasePage.getDriver();
 		// Allure ScreenShotRobot and SaveTestLog
-		
-		  if (getDriver() instanceof WebDriver) {
-		  System.out.println("Screenshot captured for test case:" +
-		  getTestMethodName(iTestResult)); saveScreenshotPNG(getDriver()); }
-		 
+		if (getDriver() instanceof WebDriver) {
+		System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+			saveScreenshotPNG(getDriver());
+		}
 		// Save a log on allure.
 		saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		
 	}
@@ -84,3 +81,4 @@ public class TestAllureListener extends BasePage implements ITestListener {
 	}
 
 }
+
